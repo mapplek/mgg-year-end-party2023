@@ -18,8 +18,9 @@ export default function Home() {
 
   async function getTotalSupply() {
     contract = await sdk.getContract(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
-    const amount = await contract.erc1155.totalSupply(tokenId);
-    return parseInt(amount);
+
+    const supplied = await contract.erc1155.totalSupply(tokenId);
+    return parseInt(supplied);
   }
   
   useEffect(() => {
@@ -32,12 +33,12 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.title_area}>
         <h1>Machinegun Girl&apos;s</h1>
       </div>
 
-      <div className={styles.sub_title_container}>
-        <div className={styles.right_margin}>
+      <div className={styles.description_container}>
+        <div className={styles.flex_horizontal_margin}>
           <Image
             src='/polygon.png'
             width='45'
@@ -45,16 +46,17 @@ export default function Home() {
             alt='icon_matic'
           />
         </div>
-        <div className={styles.right_margin}>
+        <div className={styles.flex_horizontal_margin}>
           <h2>Gasless free mint!</h2>
         </div>
       </div>
       
-      <div className={styles.nft_view_container}>
-        <div className={styles.image_frame} />
-        <div className={styles.image_container}>
+      <div className={styles.img_view_container}>
+        <div className={styles.img_frame} />
+
+        <div className={styles.img_area}>
           <Image
-            className={styles.image_property}
+            className={styles.img_property}
             src='/miko01.jpeg'
             width='200'
             height='200'
@@ -66,7 +68,7 @@ export default function Home() {
       <div>
 
       {totalSupply != 0 &&
-        <div className={styles.supply_counter_container}>
+        <div className={styles.supply_counter_area}>
           [ {totalSupply} / ∞ ] minted
         </div>
       }
