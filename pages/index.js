@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.title_area}>
-        <h1>Machinegun Girl&apos;s</h1>
+        <h1>マシンガンズ大忘年会2023</h1>
       </div>
 
       <div className={styles.description_container}>
