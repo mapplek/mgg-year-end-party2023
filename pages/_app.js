@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
           },
         },
       }}
-      activeChain={ChainId.Mumbai}
+      activeChain={ChainId.Polygon}
       clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
     >
       <Component {...pageProps} />

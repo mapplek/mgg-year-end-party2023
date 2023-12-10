@@ -10,7 +10,7 @@ export default function Home() {
 
   const [totalSupply, setTotalSupply] = useState(0);
 
-  const sdk = new ThirdwebSDK("mumbai", {
+  const sdk = new ThirdwebSDK("polygon", {
     clientId: process.env.NEXT_PUBLIC_CLIENT_ID
   });
 
@@ -57,7 +57,7 @@ export default function Home() {
         <div className={styles.img_area}>
           <Image
             className={styles.img_property}
-            src='/miko01.jpeg'
+            src='/year_end_party2023.png'
             width='200'
             height='200'
             alt='nft_image'
