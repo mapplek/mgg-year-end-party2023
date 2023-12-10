@@ -66,6 +66,13 @@
   margin: 20px;
 }
 
+.opensea_link_area {
+  margin: 20px;
+}
+.opensea_link_area a:link { color: blue }
+.opensea_link_area a:visited { color: purple }
+.opensea_link_area a:hover { color: skyblue }
+.opensea_link_area a:active { color: blue } 
 
 /**
  * Claim button

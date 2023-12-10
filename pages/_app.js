@@ -8,12 +8,12 @@ function MyApp({ Component, pageProps }) {
       sdkOptions={{
         gasless: {
           openzeppelin: {
-            relayerUrl: process.env.NEXT_PUBLIC_OPENZEPPELIN_URL,
+            relayerUrl: process.env.NEXT_PUBLIC_DEV_OPENZEPPELIN_URL,
           },
         },
       }}
       activeChain={ChainId.Mumbai}
-      clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
+      clientId={process.env.NEXT_PUBLIC_DEV_CLIENT_ID}
     >
       <Component {...pageProps} />
     </ThirdwebProvider>
