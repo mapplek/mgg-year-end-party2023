@@ -9,6 +9,7 @@ export default function Home() {
   const quantity = 1;
 
   const [totalSupply, setTotalSupply] = useState(0);
+  const [minted, setMinted] = useState(false);
 
   const sdk = new ThirdwebSDK("polygon", {
     clientId: process.env.NEXT_PUBLIC_CLIENT_ID
@@ -72,6 +73,11 @@ export default function Home() {
           [ {totalSupply} / ∞ ] minted
         </div>
       }
+      {minted &&
+        <div className={styles.opensea_link_area}>
+          OpenSea link is <a href="https://opensea.io/collection/mgg-year-end-party2023">here</a>!
+        </div>
+      }
 
       </div>
       <div>
@@ -82,7 +88,10 @@ export default function Home() {
             await contract.erc1155.claim(tokenId, quantity);
             setTotalSupply(parseInt(await contract.erc1155.totalSupply(tokenId)));
           }}
-          onSuccess={() => alert("Claimed!")}
+          onSuccess={() => {
+            alert("Claimed!");
+            setMinted(true);
+          }}
           onError={() => alert("Something went wrong")}
         >
           Claim
